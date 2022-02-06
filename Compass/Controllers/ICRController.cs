@@ -1,10 +1,19 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Compass.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Compass.Controllers
 {
     public class ICRController : Controller
     {
+        //Data ile iletişim
+        private readonly FormContext _context;
+        public ICRController(FormContext context)
+        {
+            _context = context;
+        }
+
+
         // GET: FormController
         public ActionResult Index()
         {
